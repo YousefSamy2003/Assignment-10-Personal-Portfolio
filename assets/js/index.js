@@ -45,3 +45,13 @@ btnMode.addEventListener("click", function () {
   }
 });
 storeTheme();
+
+///// open sideBar
+
+sideBarBtn = document.getElementById("settings-toggle");
+sideBar = document.getElementById("settings-sidebar");
+
+sideBarBtn.addEventListener("click", function () {
+  sideBar.classList.toggle("translate-x-full");
+  sideBarBtn.classList.toggle("show");
+});
