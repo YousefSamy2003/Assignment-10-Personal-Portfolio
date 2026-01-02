@@ -22,3 +22,26 @@ function scrollSpy() {
   }
 }
 scrollSpy();
+
+//                 change Theme And Store in local storage
+btnMode = document.getElementById("theme-toggle-button");
+htmlPage = document.querySelector("html");
+
+function storeTheme() {
+  if (localStorage.getItem("theme") == "light") {
+    htmlPage.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+    htmlPage.classList.add("dark");
+  }
+}
+btnMode.addEventListener("click", function () {
+  htmlPage.classList.toggle("dark");
+  if (localStorage.getItem("theme") == "dark") {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+});
+storeTheme();
