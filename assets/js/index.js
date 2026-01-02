@@ -46,7 +46,7 @@ btnMode.addEventListener("click", function () {
 });
 storeTheme();
 
-///// open sideBar
+/////                            open sideBar
 
 sideBarBtn = document.getElementById("settings-toggle");
 sideBar = document.getElementById("settings-sidebar");
@@ -54,4 +54,20 @@ sideBar = document.getElementById("settings-sidebar");
 sideBarBtn.addEventListener("click", function () {
   sideBar.classList.toggle("translate-x-full");
   sideBarBtn.classList.toggle("show");
+});
+
+////                    scroll to top button
+
+scrollToTopBtn = document.getElementById("scroll-to-top");
+window.addEventListener("scroll", function () {
+  if (this.scrollY > allSection[0].offsetTop) {
+    scrollToTopBtn.classList.remove("opacity-0");
+    scrollToTopBtn.classList.remove("invisible");
+  } else {
+    scrollToTopBtn.classList.add("opacity-0");
+    scrollToTopBtn.classList.add("invisible");
+  }
+});
+scrollToTopBtn.addEventListener("click", function () {
+  location.href = "#hero-section";
 });
