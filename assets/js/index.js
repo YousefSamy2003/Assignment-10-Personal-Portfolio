@@ -110,5 +110,13 @@ function getFontFromLocalStorage() {
   } else if (font === "tajawal") {
     document.body.classList.add("font-tajawal");
   }
+
+  for (let i = 0; i < myAllFontsBtn.length; i++) {
+    if (myAllFontsBtn[i].getAttribute("data-font") === font) {
+      myAllFontsBtn[i].classList.add("active");
+    } else {
+      myAllFontsBtn[i].classList.remove("active");
+    }
+  }
 }
 getFontFromLocalStorage();
