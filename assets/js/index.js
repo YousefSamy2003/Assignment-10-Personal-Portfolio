@@ -90,10 +90,25 @@ for (let i = 0; i < myAllFontsBtn.length; i++) {
     );
     if (font === "alexandria") {
       document.body.classList.add("font-alexandria");
+      localStorage.setItem("font", "alexandria");
     } else if (font === "cairo") {
       document.body.classList.add("font-cairo");
+      localStorage.setItem("font", "cairo");
     } else if (font === "tajawal") {
       document.body.classList.add("font-tajawal");
+      localStorage.setItem("font", "tajawal");
     }
   });
 }
+
+function getFontFromLocalStorage() {
+  const font = localStorage.getItem("font");
+  if (font === "alexandria") {
+    document.body.classList.add("font-alexandria");
+  } else if (font === "cairo") {
+    document.body.classList.add("font-cairo");
+  } else if (font === "tajawal") {
+    document.body.classList.add("font-tajawal");
+  }
+}
+getFontFromLocalStorage();
