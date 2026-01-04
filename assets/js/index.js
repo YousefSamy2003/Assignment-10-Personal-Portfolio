@@ -177,3 +177,43 @@ for (let i = 0; i < navsTabsButton.length; i++) {
     }
   });
 }
+
+// carsoul
+
+const nextBtn = document.getElementById("next-testimonial");
+const prevBtn = document.getElementById("prev-testimonial");
+const allCardTestimonial = document.querySelectorAll(".testimonial-card");
+const widthCard = allCardTestimonial[0].offsetWidth;
+const parentAllCard = document.getElementById("testimonials-carousel");
+console.log(allCardTestimonial.length);
+
+var count = 0;
+nextBtn.addEventListener("click", function () {
+  if (count < 3) {
+    count++;
+    update();
+  } else {
+    count = 0;
+  }
+});
+
+prevBtn.addEventListener("click", function () {
+  count--;
+  if (count < 0) {
+    count = 3;
+  }
+  update();
+});
+
+function update() {
+  parentAllCard.style.transform = `translateX(${widthCard * count}px)`;
+}
+
+const allCarouselIndicator = document.querySelectorAll(".carousel-indicator ");
+
+for (let i = 0; i < allCarouselIndicator.length; i++) {
+  allCarouselIndicator[i].addEventListener("click", function () {
+    count = i;
+    update();
+  });
+}
