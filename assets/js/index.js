@@ -105,10 +105,19 @@ function getFontFromLocalStorage() {
   const font = localStorage.getItem("font");
   if (font === "alexandria") {
     document.body.classList.add("font-alexandria");
+    document.body.classList.remove("font-cairo");
+    document.body.classList.remove("font-tajawal");
+    localStorage.setItem("font", "alexandria");
   } else if (font === "cairo") {
     document.body.classList.add("font-cairo");
+    document.body.classList.remove("font-alexandria");
+    document.body.classList.remove("font-tajawal");
+    localStorage.setItem("font", "cairo");
   } else if (font === "tajawal") {
     document.body.classList.add("font-tajawal");
+    document.body.classList.remove("font-cairo");
+    document.body.classList.remove("font-alexandria");
+    localStorage.setItem("font", "tajawal");
   }
 
   for (let i = 0; i < myAllFontsBtn.length; i++) {
